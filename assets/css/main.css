@@ -5058,14 +5058,14 @@ body .asw-menu-reset-footer-btn {
 }
 
 
-.banner-wrapper {
+.internal-banner {
   position: relative;
   width: 100%;
   max-height: 400px;
   overflow: hidden;
 }
 
-.banner-wrapper img {
+.internal-banner img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -5074,7 +5074,7 @@ body .asw-menu-reset-footer-btn {
 }
 
 /* Breadcrumb Navigation Bottom Overlay */
-.menuBttom {
+.breadcrumbNav {
   position: absolute;
   bottom: 0;
   left: 0;
