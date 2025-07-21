@@ -1,4 +1,5 @@
 
+
 (function () {
   "use strict";
 
@@ -24,14 +25,7 @@
   /**
    * Mobile nav toggle
    */
-  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+ 
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -228,3 +222,59 @@ $('.iconbox').mouseenter(function() {
 $('.iconbox').mouseleave(function() {
   // Do nothing here, keep the current box active
 });
+
+  // Create loader container
+    const loader = document.createElement("div");
+    loader.id = "pageLoader";
+    loader.innerHTML = `<img src="/assets/image/IOB.svg" alt="Loader Logo" class="loader-logo" />`;
+    document.body.appendChild(loader);
+
+    // Add loader styles
+    const style = document.createElement("style");
+    style.innerHTML = `
+      #pageLoader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.7s ease-in, opacity 0.3s ease;
+      }
+
+      .loader-logo {
+        width: 120px;
+        height: auto;
+        animation: zoomPulse 1.2s infinite ease-in-out;
+      }
+
+      @keyframes zoomPulse {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.1);
+          opacity: 0.8;
+        }
+      }
+
+      #pageLoader.slide-up {
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // On window load, trigger slide-up animation and remove loader
+    window.addEventListener("load", () => {
+      loader.classList.add("slide-up");
+      setTimeout(() => {
+        loader.remove();
+      }, 700); // Wait for slide-up to finish
+    });

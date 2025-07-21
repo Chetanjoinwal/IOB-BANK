@@ -15,12 +15,11 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"></script>
 	<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="assets/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
-  <link rel="stylesheet" href="assets/ajax/libs/slick-carousel/1.9.0/slick.css">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/ajax/libs/slick-carousel/1.9.0/slick.css"> 
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
   <link rel="stylesheet" href="assets/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -33,7 +32,7 @@
 
 <body class="index-page">
 
-  <header id="header" class="header  ">
+  <header id="header" class="header site-header ">
     <div class="customContainer position-relative d-flex align-items-center justify-content-between">
       <i class="topToggle   bi bi-list"></i>
       <div class="leftDiv">
@@ -58,7 +57,7 @@
             <ul>
              <li><a href="about.html" class="text-decoration-none"><i class="bi bi-info-circle-fill me-1"></i> About Us</a></li>
   <li><a href="#" class="text-decoration-none"><i class="bi bi-graph-up-arrow me-1"></i> Investor Relation Cell</a></li>
-  <li><a href="#" class="text-decoration-none"><i class="bi bi-broadcast-pin me-1"></i> Customer Corner</a></li>
+  <li><a href="customer-corner.html" class="text-decoration-none"><i class="bi bi-broadcast-pin me-1"></i> Customer Corner</a></li>
   <li><a href="#" class="text-decoration-none"><i class="bi bi-eyeglasses me-1"></i> Screen Reader</a></li>
   <li class="deksnone"><a href="tel:18008904445" class="text-decoration-none"><i class="bi bi-telephone-forward-fill me-1"></i> Toll Free 18008904445</a></li>
             </ul>
@@ -221,6 +220,7 @@
       </div>
     </div>
   </header>
+ 
   <main class="main">
 <div class="overlaybox" style="display: none;"></div>
 
@@ -586,25 +586,25 @@ On sequential basis, net profit of the bank rose 20.3 percent.</li>
     <section class="portfolio-section" id="portfolio">
       <div class="container">
         <div class="row ">
-          <div class="col-lg-12 text-center">
+          <div class="col-lg-6 text-center">
             <h4>BANKING WITH <img src="assets/image/IOB.svg" alt="" class="d-inline"> OFFERS AND REWARDS</h4>
             <h2>Banking that rewards you</h2>
             <p>
               Discover our special and exclusive offers made for you
             </p>
           </div>
-        </div>
-        <div class="portfolio-menu mt-2 mb-4">
-          <nav class="controls">
-            <button type="button" class="control outline" data-filter="all">All Offers</button>
-            <button type="button" class="control outline" data-filter=".din">Dining</button>
-            <button type="button" class="control outline" data-filter=".ele">Electronics</button>
-            <button type="button" class="control outline" data-filter=".lif">Lifestyle</button>
-            <button type="button" class="control outline" data-filter=".gift">Gifting</button>
-            <button type="button" class="control outline" data-filter=".Shop">Shopping</button>
-            <button type="button" class="control outline" data-filter=".enter">Entertainment</button>
-            <button type="button" class="control outline" data-filter=".Shop">Healthcare</button>
-          </nav>
+          <div class="portfolio-menu col-lg-6 mt-2 mb-4">
+            <nav class="controls">
+              <button type="button" class="control outline" data-filter="all">All Offers</button>
+              <button type="button" class="control outline" data-filter=".din">Dining</button>
+              <button type="button" class="control outline" data-filter=".ele">Electronics</button>
+              <button type="button" class="control outline" data-filter=".lif">Lifestyle</button>
+              <button type="button" class="control outline" data-filter=".gift">Gifting</button>
+              <button type="button" class="control outline" data-filter=".Shop">Shopping</button>
+              <button type="button" class="control outline" data-filter=".enter">Entertainment</button>
+              <button type="button" class="control outline" data-filter=".Shop">Healthcare</button>
+            </nav>
+          </div>
         </div>
         <ul class="row portfolio-item portfolio-slider">
           <li class="mix din col-xl-3 col-md-4 col-12 col-sm-6 pd">
@@ -1107,7 +1107,7 @@ On sequential basis, net profit of the bank rose 20.3 percent.</li>
 
   <script src="assets/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
@@ -1151,6 +1151,10 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
   const loanSwiper = new Swiper(".loan-swiper", {
       effect: "cards",
       grabCursor: true,
+       autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    }
     });
 
       $('#main-accessblity').click(function () {
@@ -1438,18 +1442,8 @@ typeWriter();
         easing: "cubic-bezier(0.645, 0.045, 0.355, 1)"
       }
     });
-    // fancybox insilaze & options //
-    $("[data-fancybox]").fancybox({
-      loop: true,
-      hash: true,
-      transitionEffect: "slide", 
-      clickContent: function(current, event) {
-        return current.type === "image" ? "next" : false;
-      }
-    });
-</script>
-
-<script>
+   
+ 
   const chartRefs = {};
 
   function createCalculator(prefix) {
@@ -1591,91 +1585,60 @@ $(document).ready(function () {
   });
 });
 
+ window.onload =  function () {
+    Swal.fire({
+      html: `
+        <h4 class="mb-2 fw-bold">Welcome to Corporate Website of Indian Overseas Bank</h4>
+        <h5 class="mb-4 text-secondary">इण्डियन ओवरसीज़ बैंक की कॉर्पोरेट वेबसाइट पर आपका स्वागत है।</h5>
 
-// 		window.onload = function () {
-//   Swal.fire({
-//     html: `
-//       <h3>नाबार्ड - राष्ट्रीय कृषि और ग्रामीण विकास बैंक की आधिकारिक वेबसाइट में आपका स्वागत है</h3>
-//       <h4>Welcome to Official Website of NABARD - National Bank For Agriculture And Rural Development</h4>
-//       <p>वेबसाइट देखने के लिए अपनी पसंदीदा भाषा का चयन करें</p>
-//       <p>Select your Preferred Language to Access the Website</p>
+        <h5 class="mb-1 fw-semibold text-primary">Please choose any language to proceed</h5>
+        <p class="mb-3 text-muted">कृपया आगे बढ़ने के लिए भाषा का चयन करें।</p>
 
-//       <div class="checkbox-container popUpdrop">
-//         <input type="checkbox" id="rememberChoice">
-//         <label for="rememberChoice">मेरा चयनित विकल्प याद रखें / Remember my choice</label>
-      
+        <div class="form-check text-start mb-4">
+          <input class="form-check-input" type="checkbox" id="rememberChoice">
+          <label class="form-check-label" for="rememberChoice">
+            Remember my choice / मेरा चयनित विकल्प याद रखें
+          </label>
+        </div>
 
-//       <div class="dropdown language-dropdown mt-3 ">
-//         <button class="btn btn-lang-toggle dropdown-toggle" type="button" id="languageDropdown"
-//           data-bs-toggle="dropdown" aria-expanded="false">
-//           <i class="fas fa-language me-2"></i> Select Language
-//         </button>
-//         <ul class="dropdown-menu" aria-labelledby="languageDropdown" style="max-height: 200px; overflow-y: auto;">
-//           <li><a class="dropdown-item" data-value="en" href="#">English</a></li>
-//           <li><a class="dropdown-item" data-value="hi" href="#">Hindi (हिन्दी)</a></li>
-//           <li><a class="dropdown-item" data-value="as" href="#">Assamese (অসমীয়া)</a></li>
-//           <li><a class="dropdown-item" data-value="bn" href="#">Bengali (বাংলা)</a></li>
-//           <li><a class="dropdown-item" data-value="brx" href="#">Bodo (बड़ो)</a></li>
-//           <li><a class="dropdown-item" data-value="gu" href="#">Gujarati (ગુજરાતી)</a></li>
-//           <li><a class="dropdown-item" data-value="kn" href="#">Kannada (ಕನ್ನಡ)</a></li>
-//           <li><a class="dropdown-item" data-value="ml" href="#">Malayalam (മലയാളം)</a></li>
-//           <li><a class="dropdown-item" data-value="mr" href="#">Marathi (मराठी)</a></li>
-//           <li><a class="dropdown-item" data-value="pa" href="#">Punjabi (ਪੰਜਾਬੀ)</a></li>
-//           <li><a class="dropdown-item" data-value="ta" href="#">Tamil (தமிழ்)</a></li>
-//           <li><a class="dropdown-item" data-value="te" href="#">Telugu (తెలుగు)</a></li>
-//           <li><a class="dropdown-item" data-value="ur" href="#">Urdu (اردو)</a></li>
-//         </ul>
-//       </div>
-// 	  </div>
-//     `,
-//     showConfirmButton: false,
-//     allowOutsideClick: false,
-//     customClass: {
-//       popup: 'custom-popup'
-//     },
-//     didOpen: () => {
-//       // Attach listener to language dropdown items
-//       document.querySelectorAll('.dropdown-item').forEach(item => {
-//         item.addEventListener('click', (e) => {
-//           e.preventDefault();
-//           const selectedLang = e.target.getAttribute('data-value');
-//           selectLanguage(selectedLang); // your existing function
-//         });
-//       });
-//     }
-//   });
-// };
+        <div class="d-flex justify-content-center gap-3">
+          <button id="englishBtn" class="btn btn-outline-primary px-4 py-2 fw-bold">
+            <i class="fas fa-language me-2"></i> English
+          </button>
+          <button id="hindiBtn" class="btn btn-primary px-4 py-2 fw-bold">
+            <i class="fas fa-language me-2"></i> हिन्दी
+          </button>
+        </div>
+      `,
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      customClass: {
+        popup: 'custom-popup'
+      },
+      didOpen: () => {
+        // Get buttons
+        const englishBtn = Swal.getPopup().querySelector('#englishBtn');
+        const hindiBtn = Swal.getPopup().querySelector('#hindiBtn');
+        const rememberCheckbox = Swal.getPopup().querySelector('#rememberChoice');
 
-// 		function selectLanguage(lang) {
-// 			const remember = document.getElementById('rememberChoice').checked;
+        englishBtn.addEventListener('click', () => {
+          if (rememberCheckbox.checked) {
+            localStorage.setItem('preferredLanguage', 'en');
+          }
+          Swal.close(); 
+        });
 
-// 			Swal.fire({
-// 				title: 'Selection of Logo for Amalgamated RRBs - Poll',
-// 				html: `
-// 		<strong>Common Logo for Regional Rural Banks</strong><br><br>
-// 		<em>26 RRBs → 11 → One Vision, One Brand.</em><br><br>
-// 		With effect from <strong>1st May 2025</strong>, 26 Regional Rural Banks have been<br>
-// 		amalgamated into 11 ushering in a new era of efficiency, viability, and<br>
-// 		financial inclusion.<br><br>
-// 		To reflect this transformation, we are crafting a common brand identity<br>
-// 		for RRBs across India.<br><br>
-// 		• 6 logo concepts<br>
-// 		• 9 design variations<br>
-// 		• Vote for the one you like best<br>
-// 		• Share your feedback<br>
-// 		• And/or upload your own logo design below!<br><br>
-// 		<strong>Let's build the new face of rural banking — together.</strong><br><br>
-		 
-// 	  `,
-// 				showConfirmButton: true,
-// 				confirmButtonText: 'Participate in the Poll',
-// 				showCancelButton: true,
-// 				cancelButtonText: 'Okay',
-// 				customClass: {
-// 					popup: 'custom-popup'
-// 				}
-// 			});
-// 		}
+        hindiBtn.addEventListener('click', () => {
+          if (rememberCheckbox.checked) {
+            localStorage.setItem('preferredLanguage', 'hi');
+          }
+          Swal.close(); 
+        });
+      }
+    });
+  };
+ 
+
 
  new PureCounter();
 
@@ -1687,11 +1650,7 @@ $(document).ready(function () {
 				header.classList.remove("fixed");
 			}
 		});
-
-
-
-
-    
+ 
 	   /////////////////////////////// Hero animation ////////////////////////////////////
 
     gsap.registerPlugin(ScrollTrigger);
