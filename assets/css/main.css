@@ -3857,11 +3857,12 @@ section.mobile-section {
   margin-bottom: 25px;
   color: #1b49a0;
   font-weight: 600;
-  text-align: left;
-  border-left: 6px solid;
-  line-height: 1;
-  padding-left: 10px;
+  text-align: left; 
+  line-height: 1; 
   text-transform: uppercase;
+}
+.stats-heading h2 i{
+padding-right:5px ;
 }
 .curve-container.bottom-curve {TRANSFORM: scaleY(-1);}
 
@@ -5118,7 +5119,8 @@ color: white;
 }
 img.internalImg {
     max-height: 174px;
-    object-fit: cover;
+    object-fit: fill;
+    filter: contrast(1.3);
 }
 
 
@@ -7044,7 +7046,7 @@ li.nav-item.dropdown:has(>a):hover > .dropdown-menu {
       font-size: 12px;
       padding: 10px;
       border-radius: 100px;
-      background: #cccccc30;
+      background: #ffffff52;
       transition: all 0.3s ease;
       /* min-height: 100px; */
       position: relative;
@@ -7055,7 +7057,7 @@ li.nav-item.dropdown:has(>a):hover > .dropdown-menu {
       justify-content: center;
       align-items: center;
       gap: 10px;
-      backdrop-filter: blur(1px);
+      backdrop-filter: blur(10px);
     }
     .service-card:hover {
       background: #1f449a;
@@ -7071,6 +7073,7 @@ li.nav-item.dropdown:has(>a):hover > .dropdown-menu {
       font-size: 14px;
       border-radius: 50%;
       margin-bottom: 0;
+      border: 1px solid;
     }
     .service-card .text-small {
       font-size: 11px;
@@ -7102,21 +7105,34 @@ li.nav-item.dropdown:has(>a):hover > .dropdown-menu {
     padding: 50px  0;
 }
 
-.bgvideo {
+.linksec::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  background-image: url(../image/bgwallpeper.jpg);
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  }
+  
+  .linksec::after {
     position: absolute;
+    content: '';
+    z-index: -1;
+    background: linear-gradient(135deg, #007bffcc, #6f42c1e8);
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
     left: 0;
-    background-position: center;
-}
-
-.bgvideo video {
-    width: 100%;
-    object-fit: none;
-    object-position: center;
-}
+  }
+ 
 section.linksec h2 {
     color: white;
 }
@@ -7126,4 +7142,142 @@ section.linksec h2 {
 
 .row.loop {
     justify-content: center;
+    gap: 7px;
+}
+
+
+
+ :root {
+      --primary-color: #1f4298;
+    }
+
+    body {
+      background: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .search-header {
+      background: var(--primary-color);
+      padding: 20px;
+    }
+
+    .brand-search-box {
+      background: #fff;
+      border-radius: 40px;
+      padding: 10px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-search-box input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 1.2rem;
+      padding-left: 10px;
+    }
+
+    .brand-icons i {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-left: 15px;
+      cursor: pointer;
+    }
+
+    .tab-custom {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      border-bottom: 1px solid gainsboro;
+      padding-bottom: 18px;
+    }
+
+    .tab-custom .tab-btn {
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: transparent;
+      font-weight: 500;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .tab-custom .tab-btn.active {
+      background: var(--primary-color);
+      color: #fff;
+    }
+
+   .searchDiv  .loan-card {
+      border-radius: 25px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+
+   .searchDiv  .loan-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+   .searchDiv  .loan-card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+  .searchDiv   .loan-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+   .searchDiv  .loan-links a {
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+      margin-right: 20px;
+      transition: color 0.3s;
+    }
+
+  .searchDiv   .loan-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .close-btn {
+      font-size: 1.8rem;
+      color: white;
+      position: absolute;
+      right: 25px;
+      cursor: pointer;
+      border: 1px solid white;
+      border-radius: 100px;
+      padding: 10px;
+      line-height: 1;
+    }
+
+    .tab-content-section {
+      display: none;
+    }
+
+    .tab-content-section.active {
+      display: block;
+    }
+
+    .white-logo{ 
+  filter: brightness(0) invert(1); /* This makes dark logos appear white */
+} 
+
+.searchDiv {
+  display: none;
+}
+.searchDiv {
+    position: fixed;
+    width: 100%;
+    z-index: 99999999999999;
+    background: white;
+    height: max-content;
+    border-radius: 0 0 100px 100px;
+    padding-bottom: 20px;
+    box-shadow: 0px 7px 3px #a2c4f7;
 }

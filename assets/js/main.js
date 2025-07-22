@@ -1,5 +1,4 @@
 
-
 (function () {
   "use strict";
 
@@ -236,3 +235,34 @@ $('.iconbox').mouseleave(function() {
     panel.classList.toggle('show');
   } 
    
+
+
+   const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content-section');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active classes
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(tc => tc.classList.remove('active'));
+
+        // Activate clicked
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+
+
+ $(document).ready(function () {
+  $(".form-click").on("click", function () {
+    $(".searchDiv").slideDown("fast"); // Show
+  });
+
+  $(".close-search").on("click", function () {
+    $(".searchDiv").slideUp("fast"); // Hide
+  });
+});
+
+$('.form-click button').on('click', function () {
+  $(this).prop('disabled', true);
+});
