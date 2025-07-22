@@ -237,8 +237,8 @@ $('.iconbox').mouseleave(function() {
    
 
 
-   const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content-section');
+   const tabButtons = document.querySelectorAll('.searchDiv .tab-btn');
+    const tabContents = document.querySelectorAll('.searchDiv .tab-content-section');
 
     tabButtons.forEach(btn => {
       btn.addEventListener('click', () => {
