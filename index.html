@@ -1388,7 +1388,7 @@ On sequential basis, net profit of the bank rose 20.3 percent.</li>
       
         <!-- Toggle Button -->
         <div class="toggle-btn" onclick="toggleFooter()">
-          <i class="fas fa-minus" id="toggleIcon"></i>
+          <i class="fas fa-plus" id="toggleIcon"></i>
         </div>
       
         <!-- Hidden Panel -->
@@ -2125,18 +2125,7 @@ ScrollTrigger.matchMedia({
   },
 });
  
-  function toggleFooter() {
-    const $footer = $('.footerCollaps');
-    const $icon = $('#toggleIcon');
-
-    $footer.slideToggle(300, function () {
-      if ($footer.is(':visible')) {
-        $icon.removeClass('fa-plus').addClass('fa-minus');
-      } else {
-        $icon.removeClass('fa-minus').addClass('fa-plus');
-      }
-    });
-  } 
+  
 
 	</script>
 </body>

@@ -266,3 +266,18 @@ $('.iconbox').mouseleave(function() {
 $('.form-click button').on('click', function () {
   $(this).prop('disabled', true);
 });
+
+
+$('.footerCollaps').slideUp(0); // Initially hide the footer
+function toggleFooter() {
+  const $footer = $('.footerCollaps');
+  const $icon = $('#toggleIcon');
+
+  $footer.slideToggle(300, function () {
+    if ($footer.is(':visible')) {
+      $icon.removeClass('fa-plus').addClass('fa-minus');
+    } else {
+      $icon.removeClass('fa-minus').addClass('fa-plus');
+    }
+  });
+}
